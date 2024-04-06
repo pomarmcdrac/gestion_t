@@ -11,5 +11,9 @@ final router = GoRouter(
       path: '/add_task',
       builder: (context, state) => const TaskScreen(),
     ),
+    GoRoute(
+      path: '/new_task',
+      builder: (context, state) => const NewTaskScreen(),
+    ),
   ]
 );

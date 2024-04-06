@@ -1,26 +1,26 @@
 class TaskDetails {
-  final int id;
+  int? id;
   final String title;
   final int isCompleted;
   final String dueDate;
-  final String comments;
-  final String description;
-  final String tags;
-  final String token;
-  final String createdAt;
-  final String updatedAt;
+  String? comments;
+  String? description;
+  String? tags;
+  String? token;
+  String? createdAt;
+  String? updatedAt;
 
   TaskDetails({
-    required this.id,
+    this.id,
     required this.title,
     required this.isCompleted,
     required this.dueDate,
-    required this.comments,
-    required this.description,
-    required this.tags,
-    required this.token,
-    required this.createdAt,
-    required this.updatedAt,
+    this.comments,
+    this.description,
+    this.tags,
+    this.token,
+    this.createdAt,
+    this.updatedAt,
   });
 
   factory TaskDetails.fromJson(Map<String, dynamic> json) {

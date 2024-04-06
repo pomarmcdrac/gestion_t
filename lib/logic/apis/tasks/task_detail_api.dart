@@ -21,7 +21,6 @@ class GetTaskById {
         )
       );
       TaskDetails taskDetail = TaskDetails.fromJson(response.data[0]);
-      print(taskDetail.title);
       return taskDetail;
     } catch (e) {
       throw Exception('Failed to load tasks');
