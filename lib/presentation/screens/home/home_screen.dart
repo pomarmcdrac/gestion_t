@@ -8,7 +8,7 @@ class HomeScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
 
-    final tasksData = ref.watch(tasksProvider);
+    final tasksData = ref.watch(tasksListProvider);
 
     return const Scaffold(
       body: CustomScrollView(
