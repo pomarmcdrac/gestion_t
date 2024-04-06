@@ -21,17 +21,17 @@ class AppTheme {
 
     // Appbar
     appBarTheme: AppBarTheme(
-      centerTitle: true,
       backgroundColor: secundario,
+      centerTitle: true,
+      elevation: 5,
+      iconTheme: IconThemeData(color: claro),
       shadowColor: textos,
-      toolbarHeight: 350,
       titleTextStyle: TextStyle(
         color: claro,
         fontSize: 26,
         fontFamily: GoogleFonts.montserratAlternates().fontFamily,
         fontWeight: FontWeight.bold,
       ),
-      elevation: 10,
     ),
   );
 }

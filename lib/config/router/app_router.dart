@@ -6,6 +6,10 @@ final router = GoRouter(
     GoRoute(
       path: '/',
       builder: (context, state) => const HomeScreen(),
-    )
+    ),
+    GoRoute(
+      path: '/add_task',
+      builder: (context, state) => const TaskScreen(),
+    ),
   ]
 );
