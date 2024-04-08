@@ -19,7 +19,7 @@ class TaskNotifier extends StateNotifier<AsyncValue<List<Task>>> {
       final task = await taskListService.getTasks();
       state = AsyncValue.data(task);
     } catch (e) {
-      throw Exception('Failed to load tasks');
+      state = AsyncValue.error('No cuentas con tareas registradas', StackTrace.current);
     }
   }
 }
