@@ -1,9 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gestion_t/logic/models/models.dart';
 
 
-class GetTasks {
+class TaskListService {
 
   final _dio = Dio();
   String endpoint = 'https://ecsdevapi.nextline.mx/vdev/tasks-challenge/tasks';
@@ -27,5 +26,3 @@ class GetTasks {
     }
   }
 }
-
-final tasksProvider = Provider<GetTasks>((ref) => GetTasks());

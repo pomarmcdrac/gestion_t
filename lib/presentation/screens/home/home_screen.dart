@@ -14,7 +14,7 @@ class HomeScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
 
-    final tasksData = ref.watch(tasksListProvider);
+    final tasksData = ref.watch(taskListProvider);
     final Size size = MediaQuery.of(context).size;
 
     return Scaffold(
@@ -54,14 +54,14 @@ class HomeScreen extends ConsumerWidget {
   }
 }
 
-class TaskContainer extends StatelessWidget {
+class TaskContainer extends ConsumerWidget {
   final Task task;
   final Size size;
 
   const TaskContainer({super.key, required this.task, required this.size});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       margin: const EdgeInsets.only(bottom: 10),
       padding: EdgeInsets.zero,
@@ -155,8 +155,9 @@ class DeleteButton extends ConsumerWidget {
         padding: const EdgeInsets.all(10),
       ),
       onPressed: () async {
-        ref.read(taskDeleteProvider(task.id.toString())).whenData((value) {});
-        ref.refresh(tasksListProvider).whenData((value) {});
+        ref.read(taskServiceProvider.notifier).deleteTask(task.id.toString()).whenComplete(() {
+          ref.read(taskListProvider.notifier).getTasks();
+        });
       }, 
       child: Icon(
         Icons.delete_outline_rounded, 

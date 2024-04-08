@@ -34,4 +34,14 @@ class AppTheme {
       ),
     ),
   );
+
+  ThemeData get datePickerTheme => ThemeData.light().copyWith(
+    colorScheme: ColorScheme.light(
+      primary: principal,
+      onPrimary: claro,
+      surface: claro,
+      onSurface: principal,
+    ),
+    dialogBackgroundColor: claro,
+  );
 }
